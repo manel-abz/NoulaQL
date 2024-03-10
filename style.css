@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+    position: relative;
+    /* background: #f4f5; */
+    background: #ccc;
+  margin: 0;
+  padding: 0;   
+  overflow: hidden;
+  display: flex;
+  height: 100vh;
+}
+
+::selection{
+  color: #fff;
+  background: #664AFF;
+}
+
+
+.container1{
+
+  width: 40vw;
+  /* margin: 150px auto; */
+}
+
+.first-letter-logo{
+  font-weight: 500;
+  color: darkblue;
+  font-size: 30px;
+
+}
+
+.header{
+  display: flex;
+  height: 100px;
+  align-items: center;
+}
+
+.logo-text{
+  font-weight: 400;
+  display: block;
+  color: #2c3e50;
+  font-style: italic;
+  letter-spacing: 4px;
+  font-size: 22px;
+
+
+}
+
+.logo {
+    display: block;
+    margin-left: 10%;
+    width: 100px;
+    height: 100px;
+    background-image: url('./logo.svg');
+    background-size: 100%;
+}
+
+.container2{
+    display: inline-block;
+    width: 60vw;
+
+  }
+  
+
+.container1 .searchInput{
+  position: relative;
+  z-index: 10;
+  margin: 10px 2.5vw;
+  background: #fff;
+  width: 35;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
+}
+
+.searchInput input{
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 30px 0 20px;
+  font-size: 18px;
+  box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
+}
+
+.searchInput.active input{
+  border-radius: 5px 5px 0 0;
+}
+
+.searchInput .resultBox{
+  position: absolute;
+  background-color: white;
+  z-index: 10;
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.searchInput.active .resultBox{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.resultBox li{
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+}
+
+.searchInput.active .resultBox li{
+  display: block;
+}
+.resultBox li:hover{
+  background: #efefef;
+}
+
+/* .searchInput .icon{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 20px;
+  color: #644bff;
+  cursor: pointer;
+}
+
+ */
+
+
+
+
+
+
+
+
+pre{
+    white-space: pre;
+    overflow: auto;
+    border-radius: 5px;
+    box-shadow: 0px 1px 5px 3px rgba(0,0,0,0.12);
+    position: relative;
+    z-index: 2;
+    counter-reset:line-numbering;
+    background:#2c3e50;
+    margin: 10px 2.5vw;
+    padding:12px 0px 14px 0;
+    width:35vw;
+    color:#ecf0f1;
+    line-height:140%;
+    font-family: monospace;
+    font-size: 12px;
+      .line::before {
+        content: counter(line-numbering);
+        counter-increment: line-numbering;
+        padding-right: 1em;
+        /* space after numbers */
+        padding-left:8px;
+        width: 1.5em;
+        text-align: right;
+        opacity: 0.5;
+        color:white;
+    }
+  }
+
+  pre::-webkit-scrollbar {
+    width: 12px;
+  }
+
+
+
+  #table_container{
+    margin:  110px 0 0 0;
+    border-radius: 10px;
+    height: fit-content;
+    max-width: 59vw;
+    max-height: calc(100vh - 110px - 5vh);
+    overflow: scroll;
+  }
+
+  #table_container::-webkit-scrollbar {
+    width: 0;
+  }
+
+  #table_container::-webkit-scrollbar {
+    width: 12px; /* Adjust as needed */
+  }
+
+  #table_container::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Hide scrollbar thumb */
+  }
+
+  #table_container::-webkit-scrollbar-track {
+    background-color: transparent; /* Hide scrollbar track */
+  }
+  
+
+
+  .table-bordered {
+    max-height: calc(100vh - 110px - 20px);
+    overflow: scroll;
+    width: 57vw;
+    max-width: 57vw;
+    border-width: 1px 1px 1px 1px;
+    border-color: #ccc;
+    border-collapse: collapse;
+    border-radius: 5px;
+  }
+  
+  .table-bordered th,
+  .table-bordered td {
+    min-width: 150px;
+    padding: 8px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+  }
+  
+  .table-bordered th {
+    background:#2c3e50;
+    color: #ffffff;
+  }
+  
+  td.delete_row {
+    text-align: center;
+  }
+  
+  .delete_row:hover {
+    color: red;
+    cursor:pointer;
+  }
+
+
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 7px;
+}
+    
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 7px;
+}
+
+table tr:first-child th:first-child {
+    border-top-left-radius: 7px;
+}
+    
+table tr:first-child th:last-child {
+    border-top-right-radius: 7px;
+}

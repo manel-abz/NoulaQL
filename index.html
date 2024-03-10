@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Your Search Page</title>
+  </head>
+
+  <body>
+    <div class="container1">
+      <div class="header"><div class="logo"></div><div class="logo-text"><span class="first-letter-logo">N</span>OULAQL</div></div>
+      <div class="searchInput">
+        <input
+          type="text"
+          placeholder="Enter your query..."
+          autocomplete="off"
+        />
+        <div class="resultBox"></div>
+      </div>
+
+      <pre id="code-panel">
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX dbo: <http://dbpedia.org/ontology/>
+
+SELECT ?city ?population
+WHERE {
+  ?city rdf:type dbo:City ;
+        dbo:populationTotal ?population .
+}
+ORDER BY RAND()
+LIMIT 5
+</pre
+      >
+    </div>
+
+    <div class="container2">
+      <div id="table_container">
+      <table id="myTable" class="table-bordered">
+        <thead>
+          <tr id="tableHeaders">
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+    </div>
+    </div>
+
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      // Define a function to apply line highlighting to <pre> elements
+      function highlightLines() {
+        $("pre").html(function (index, html) {
+          return html.replace(/^(.*)$/gm, '<span class="line">$1</span>');
+        });
+      }
+
+      // Call the function when the document is ready
+      $(document).ready(function () {
+        highlightLines();
+      });
+    </script>
+  </body>
+</html>
